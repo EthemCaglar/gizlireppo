@@ -4,7 +4,8 @@ public class MayinTarlasinda {
     public static void main(String[] args) {
         minesweeper();//mayın ve sayıları yazıp oynat methodunu çağırır
     }
-// oyun burada çalışacak----------------------------------------------------------------------------------------
+// direkt f3le arama yapabilmek 11 soruyu direkt değerlendirme formu diye isimlendirip madde madde sayılar verdim
+// oyun burada çalışacak-------------- değerlendirme formu 1 ------------------------------------------------------
     public static void minesweeper(){
         int[] secimler = secim(); // kullanıcıya seçim yaptırıp
         int mayin = (secimler[0]*secimler[1])/4;
@@ -17,21 +18,23 @@ public class MayinTarlasinda {
                 display[i][j] = "-";
             }
         }
-
+        // değerlendirme formu 7
         while(true){ // oyunun merkezi - giris alır displayi değiştirir - kazandı kaybetti kontrolü yapar.
             yazdir(icHazir);
             System.out.println("------------------------------------------------------------");
             yazdir(display);
             int[] giris = giris(display);
+            // değerlendirme formu 8
             display[giris[0]][giris[1]] = icHazir[giris[0]][giris[1]];
-            if(icHazir[giris[0]][giris[1]] == "*"){ // kaybetme ifi
+            if(icHazir[giris[0]][giris[1]] == "*"){ // kaybetme ifi - değerlendirme formu 9
                 yazdir(icHazir);
                 System.out.println("------------------------------------------------------------");
                 yazdir(display);
-                System.out.println("Mayına Bastın Kaybettin");
+                System.out.println("Mayına Bastın Kaybettin"); // değerlendirme formu 11
                 break;
             }else{
                 galibiyetKontrol=0;
+                // değerlendirme formu 10
                 for(int i=0 ; i < display.length ; i++){ // galibiyet kontrol ifi
                     for(int j=0 ; j < display[0].length ; j++){
                         if(display[i][j] == "-")
@@ -42,13 +45,14 @@ public class MayinTarlasinda {
                     yazdir(icHazir);
                     System.out.println("------------------------------------------------------------");
                     yazdir(display);
-                    System.out.println("-----!!!!! KAZANDINIZ !!!!!-----");
+                    System.out.println("-----!!!!! KAZANDINIZ !!!!!-----"); // değerlendirme formu 11
                     break;
                 }
             }
         }
     }
 // Satır sutun ve mayın sayısını alır ---------------------------------------------------------------
+// değerlendirme formu 2
     public static int[] secim(){
         Scanner input = new Scanner(System.in);
 
@@ -57,11 +61,14 @@ public class MayinTarlasinda {
 
         System.out.print("Tarlanızın Sütun Sayısı: ");
         int sutun = input.nextInt();
+        // değerlendirme formu 3
         int[] matris = {satir,sutun};
         return matris;   
     }
 // sıfır hariç rastgele sayı üretir ---------------------------------------------------------------------------
+// değerlendirme formu 2
     public static int sayiUret(int maks){
+        // değerlendirme formu 4
         int randomized = (int)(Math.random() * maks);
         while(randomized == 0){
             randomized = (int)(Math.random() * maks);
@@ -72,6 +79,7 @@ public class MayinTarlasinda {
         return randomized;
     }
 // sayiUret ile birlikte çalışır, birbirinden farklı rastgele sayıları diziye aktarır -------------------------
+// değerlendirme formu 2
     public static int[] sayiDiz(int mayin, int maks){
         int[] mayinDizimi = new int [mayin];
         for(int i = 0 ; i < mayin ; i++){ // rastgele sayı üretme ve yerleştirme
@@ -93,6 +101,7 @@ public class MayinTarlasinda {
         return mayinDizimi;
     }
 // mayindizimi dizisindeki rastgele sayıyı matris koordinatına çevirir-------------------------------------------
+// değerlendirme formu 2
     public static int[] koordinat(int sutun, int konum){
         int satirVeri = konum/sutun;// soldan sağa dizildiğinde sütün kaçsa o kadar satıra eşit gelir
         int sutunVeri = (konum % sutun);
@@ -105,9 +114,9 @@ public class MayinTarlasinda {
         return koordinat;
     }
 // inside matrisinde mayınların ve mayın çevresindeki sayıların oluşturulması ---------------------------------
+// değerlendirme formu 2
     public static String[][] oyunMatrisi(int satir,int sutun){
         int[][] inside = new int [satir][sutun];
-
         int maks = satir*sutun;
         int mayin = maks/4;
         int [] mayinDizimi = sayiDiz(mayin, maks); // mayın sayısı kadar rastgele sayımızı istiyoruz
@@ -150,6 +159,7 @@ public class MayinTarlasinda {
         return mayinHazir;
     }
 // mayınlarına göre sayıları verdiğimiz matrisi stringe çevirip mayını olan yerlere yıldız koyuyor--------------
+// değerlendirme formu 2
     public static String[][] matrisStringe(int[][] inside, int[] mayinDizimi){
         int satir = inside.length;
         int sutun = inside[0].length;
@@ -167,6 +177,7 @@ public class MayinTarlasinda {
         return om;
     }
 // çift eskenli matris yazdırmak için -------------------------------------------------------------------------
+// değerlendirme formu 2
     public static void yazdir(String[][] yazdir){
         for(int i=0 ; i < yazdir.length ; i++){
             for(int j=0 ; j < yazdir[0].length ; j++){
@@ -176,6 +187,8 @@ public class MayinTarlasinda {
         }
     }
 // oyunu oynamak için açılacak satır ve sutunu istemek için ------------------------------------------------------
+// değerlendirme formu 5
+// değerlendirme formu 2
     public static int[] giris(String[][] display){
         Scanner input = new Scanner(System.in);
         int satirGiris;
@@ -184,6 +197,7 @@ public class MayinTarlasinda {
             while(true){ // satır sayısı sınırın dışında olursa tekrar alıyor
                 System.out.print("Seçtiğiniz satır: ");
                 satirGiris = input.nextInt();
+                // değerlendirme formu 6
                 if(0 <= satirGiris && satirGiris < display.length ){
                     break;
                 }else{
@@ -194,12 +208,14 @@ public class MayinTarlasinda {
             while(true){ // sutun sayısı sınırın dışında olursa tekrar alıyor
                 System.out.print("Seçtiğiniz sutun: ");
                 sutunGiris = input.nextInt();
+                // değerlendirme formu 6
                 if(0 <= sutunGiris && sutunGiris < display[0].length ){
                     break;
                 }else{
                     System.out.print("Hatalı Giriş !!!\n");
                 }
             }
+            // değerlendirme formu 6
             if(display[satirGiris][sutunGiris] == "-"){
                 break;
             }else{
