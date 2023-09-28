@@ -2,13 +2,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class MayinTarlasinda {
     public static void main(String[] args) {
-        minesweeper();//bomba ve sayıları yazıp oynat methodunu çağırır
+        minesweeper();//mayın ve sayıları yazıp oynat methodunu çağırır
     }
 // oyun burada çalışacak----------------------------------------------------------------------------------------
     public static void minesweeper(){
         int[] secimler = secim(); // kullanıcıya seçim yaptırıp
-        int mayin = secimler[2];
-        String[][] icHazir = oyunYapisi(secimler[0],secimler[1],secimler[2]);
+        int mayin = (secimler[0]*secimler[1])/4;
+        String[][] icHazir = oyunMatrisi(secimler[0],secimler[1]);
         String[][] display = new String [icHazir.length][icHazir[0].length];
         int galibiyetKontrol = 0;
 
@@ -57,19 +57,7 @@ public class MayinTarlasinda {
 
         System.out.print("Tarlanızın Sütun Sayısı: ");
         int sutun = input.nextInt();
-
-        int mayin;
-
-        while(true){ // mayın sayısının 0dan büyük maksimum kutu sayısından küçük olmasını sağlıyor
-            System.out.print("Mayın Sayısı: ");
-            mayin = input.nextInt();
-            if(mayin >= (satir*sutun) && 0 < mayin ){
-                System.out.print("Mayın Sayısı Kareden Fazla Olamaz\n");
-            }else{
-                break;
-            }
-        }
-        int[] matris = {satir,sutun,mayin};
+        int[] matris = {satir,sutun};
         return matris;   
     }
 // sıfır hariç rastgele sayı üretir ---------------------------------------------------------------------------
@@ -89,7 +77,7 @@ public class MayinTarlasinda {
         for(int i = 0 ; i < mayin ; i++){ // rastgele sayı üretme ve yerleştirme
             mayinDizimi[i] = sayiUret(maks);
         }
-        int kontrol = 1;
+        int kontrol = 1; // girişte while = true olsun diye 0dan farklı olmalı
         while(kontrol != 0){ // kontrol whileı
             kontrol = 0; // kontrol değişkeni tekrar eden sayı olup olmadığını kontrol ediyor
             Arrays.sort(mayinDizimi); // eşiti arama için kolaylık amacıyla sıralıyoruz
@@ -104,42 +92,24 @@ public class MayinTarlasinda {
         }
         return mayinDizimi;
     }
-
 // mayindizimi dizisindeki rastgele sayıyı matris koordinatına çevirir-------------------------------------------
     public static int[] koordinat(int sutun, int konum){
-        int satirVeri = konum/sutun;
+        int satirVeri = konum/sutun;// soldan sağa dizildiğinde sütün kaçsa o kadar satıra eşit gelir
         int sutunVeri = (konum % sutun);
-        if(sutunVeri == 0){
-            sutunVeri = sutun;
-            satirVeri--;
+        if(sutunVeri == 0){// kalan sıfırsa aslında sutun kadar olacak
+            sutunVeri = sutun; // örnek üzerinden anlatırsak 18/6=3 18%6=0 olduğunda 0'ı 6 ya 3'den de 1 çıkarıyoruz.
+            satirVeri--;  // 3-0 yerine 2-6 verisi gibi düşünülebilir
         }
-        sutunVeri--;
+        sutunVeri--;// sutunlar 0dan başladığı için 1 çıkarmamız gerekiyor
         int[] koordinat = {satirVeri,sutunVeri};
         return koordinat;
     }
-// mayınlarına göre sayıları verdiğimiz matrisi stringe çevirip mayını olan yerlere yıldız koyuyor--------------
-    public static String[][] oyunMatrisi(int[][] inside, int[] mayinDizimi){
-        int satir = inside.length;
-        int sutun = inside[0].length;
-        String[][] om = new String [satir][sutun];
-
-        for(int i=0 ; i < inside.length ; i++){
-            for(int j=0 ; j < sutun ; j++){
-                om[i][j] = Integer.toString(inside[i][j]);
-            }
-        }
-        
-        for(int i = 0 ; i < mayinDizimi.length ; i++){
-            om[koordinat(sutun, mayinDizimi[i])[0]][koordinat(sutun, mayinDizimi[i])[1]] = "*";
-        }
-        return om;
-    }
-
 // inside matrisinde mayınların ve mayın çevresindeki sayıların oluşturulması ---------------------------------
-    public static String[][] oyunYapisi(int satir,int sutun, int mayin){
+    public static String[][] oyunMatrisi(int satir,int sutun){
         int[][] inside = new int [satir][sutun];
 
         int maks = satir*sutun;
+        int mayin = maks/4;
         int [] mayinDizimi = sayiDiz(mayin, maks); // mayın sayısı kadar rastgele sayımızı istiyoruz
 
         for(int i=0 ; i < satir ; i++){ // tüm insideın içini 0
@@ -148,10 +118,10 @@ public class MayinTarlasinda {
             }
         }
 
-        for(int i = 0 ; i < mayinDizimi.length ; i++){
+        for(int i = 0 ; i < mayinDizimi.length ; i++){ // random sayıları çeviriyoruz.
             int krdSatir = koordinat(sutun, mayinDizimi[i])[0]; // [-1][-1]  [-1][ 0] [-1][+1]
             int krdSutun = koordinat(sutun, mayinDizimi[i])[1]; // [ 0][-1]           [ 0][+1]
-                                                                // [+1][-1]  [+1][ 0] [+1][+1]
+            // sınır kontrolü                                     [+1][-1]  [+1][ 0] [+1][+1]
             if(0 <= krdSatir-1 && 0 <= krdSutun-1){ // [-1][-1]
                 inside[krdSatir-1][krdSutun-1]++;}
 
@@ -176,8 +146,25 @@ public class MayinTarlasinda {
             if(krdSatir+1 < satir && krdSutun+1 < sutun){
                 inside[krdSatir+1][krdSutun+1]++;} // [+1][+1]
         }
-        String[][] mayinHazir = oyunMatrisi(inside, mayinDizimi);
+        String[][] mayinHazir = matrisStringe(inside, mayinDizimi);
         return mayinHazir;
+    }
+// mayınlarına göre sayıları verdiğimiz matrisi stringe çevirip mayını olan yerlere yıldız koyuyor--------------
+    public static String[][] matrisStringe(int[][] inside, int[] mayinDizimi){
+        int satir = inside.length;
+        int sutun = inside[0].length;
+        String[][] om = new String [satir][sutun];
+
+        for(int i=0 ; i < inside.length ; i++){  // stringe çevirme foru
+            for(int j=0 ; j < sutun ; j++){
+                om[i][j] = Integer.toString(inside[i][j]);
+            }
+        }
+        
+        for(int i = 0 ; i < mayinDizimi.length ; i++){ // mayın yerleştirme ifi
+            om[koordinat(sutun, mayinDizimi[i])[0]][koordinat(sutun, mayinDizimi[i])[1]] = "*";
+        }
+        return om;
     }
 // çift eskenli matris yazdırmak için -------------------------------------------------------------------------
     public static void yazdir(String[][] yazdir){
