@@ -1,12 +1,11 @@
+package Mine;
+
 import java.util.Arrays;
 import java.util.Scanner;
 public class MayinTarlasinda {
-    public static void main(String[] args) {
-        minesweeper();//mayın ve sayıları yazıp oynat methodunu çağırır
-    }
 // direkt f3le arama yapabilmek 11 soruyu direkt değerlendirme formu diye isimlendirip madde madde sayılar verdim
 // oyun burada çalışacak-------------- değerlendirme formu 1 ------------------------------------------------------
-    public static void minesweeper(){
+    public void minesweeper(){
         int[] secimler = secim(); // kullanıcıya seçim yaptırıp
         int mayin = (secimler[0]*secimler[1])/4;
         String[][] icHazir = oyunMatrisi(secimler[0],secimler[1]);
