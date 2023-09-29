@@ -2,8 +2,6 @@
 
 Methodların Görevleri ve Değişkenleri
 
-- main : Minesweeper komutunu çağırır.
-
 - minesweeper : Araç methodlarını çağırarak oyunun oynanabilmesini sağlar, kazanma kaybetme kontrolü yapar. Oyun ekranını oluşturur. secim, oyunMatrisi, giris, yazdır methodlarını çağırır.
 	
 	secimler [Dizi](int) : secim methodundan gelen oyunun oluşturulacağı satır sutun boyutu ve mayın sayısını taşır.
