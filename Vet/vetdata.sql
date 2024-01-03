@@ -5,7 +5,7 @@
 -- Dumped from database version 15.5
 -- Dumped by pg_dump version 16.1
 
--- Started on 2024-01-03 20:22:32
+-- Started on 2024-01-03 21:29:27
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -381,11 +381,11 @@ COPY public.animal_vaccines (id, protection_end, protection_start, animal_id, va
 --
 
 COPY public.animals (id, birthday, breed, colour, gender, name, species, customer_id) FROM stdin;
-1	2023-01-01	yes	blu	MALE	barry	bichon frise	1
-2	2000-04-09	yes	blu	FEMALE	madden	shiba	2
-7	2022-07-01	no	blu	FEMALE	yoshi	chihuahua	4
-8	2023-02-10	yes	blu	MALE	larry	basset	5
-3	2005-11-12	no\n	blu	FEMALE	yogi	akita	3
+1	2023-01-01	yes	white	MALE	barry	bichon frise	1
+2	2000-04-09	yes	orange	FEMALE	madden	shiba	2
+7	2022-07-01	no	black/white	FEMALE	yoshi	chihuahua	4
+8	2023-02-10	yes	brown/white	MALE	larry	basset	5
+3	2005-11-12	no\n	white	FEMALE	yogi	akita	3
 \.
 
 
@@ -671,7 +671,7 @@ ALTER TABLE ONLY public.animal_vaccines
     ADD CONSTRAINT fktx6d054a6qgimiblyxm4f5ue FOREIGN KEY (vaccine_id) REFERENCES public.vaccines(id);
 
 
--- Completed on 2024-01-03 20:22:32
+-- Completed on 2024-01-03 21:29:28
 
 --
 -- PostgreSQL database dump complete
