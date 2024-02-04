@@ -1,0 +1,565 @@
+*{
+    font-family: "Space Grotesk", sans-serif;
+}
+/*-------------------- header start ------------------------------*/
+header {
+    background-image: url(images/hero-man.jpg);
+    background-position: center;
+}
+
+.join{
+    font-weight: bold;
+    background-color: coral;
+    padding: 5px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+/*-------------------- HEADER END ------------------------------*/
+/*--------------------  MIDHEAD START (hero) ----------------------------*/
+.hebir{
+    width: 0;
+}
+
+.heiki{
+    white-space: nowrap;
+}
+
+nav{
+    position: relative;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.midhead{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+}
+
+.powerfull{
+    color: aliceblue;
+    padding: 7px;
+    border-radius: 10px;
+    background-color:darkslateblue;
+    cursor: default;
+    text-decoration: none;
+}
+
+.midheadbutton{
+    padding-bottom: 3%;
+}
+
+.midheadbutton a{
+    font-size: 25px;
+    padding: 14px;
+    margin-left: 2%;
+    color: aliceblue;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.sign{
+    background-color:darkslateblue;
+    font-weight: bold;
+}
+
+.details{
+    margin-left: 2%;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.titletext h1{
+    font-size: 100px;
+    color: aliceblue;
+    text-shadow: 4px 4px 2px black;
+}
+
+.midhead p{
+    padding: 1%;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: aliceblue;
+}
+
+@media only screen and (max-width:800px) {
+    .powerfull{
+        color: aliceblue;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 30px;
+    }
+    .midheadbutton{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+    .midheadbutton a{
+      padding: 10px 30%;
+    }
+
+    .titletext h1{
+        white-space: nowrap;
+        font-size: 70px;
+    }
+  }
+
+/*---------------------- MIDHEAD END (hero) ----------------------------*/
+/*---------------------- NUMBERS START ---------------------------------*/
+
+.numbers{
+    background-color: #dceeff;
+}
+
+.numbernodes{
+    position: relative;
+    margin-left: 15%;
+}
+
+.nodes{
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    padding-top: 50px;
+    margin: 50px 35px;
+    list-style: none;
+    text-align: center;
+    font-size: 30px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.nodes span{
+    color: #2a578f;
+    font-weight: bold;
+}
+
+.midhead p{
+    font-weight: bold;
+}
+
+@media only screen and (max-width:1000px) {
+    .numbernodes{
+        display: flex;
+    }
+
+    .nodes{
+        width: 60%;
+    }
+}
+/*---------------------- NUMBERS END ---------------------------------*/
+/*---------------------- CLASSES START ---------------------------------*/
+.classes{
+    text-align: center;
+}
+
+.classes h2{
+    color: #2a578f;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+.rodclass{
+    background-color: coral;
+    font-size: 7px;
+    padding: 1px 60px;
+    border-radius: 10px;
+}
+
+.rodtextclass{
+    margin: 60px 500px;
+    font-size: 20px;
+}
+
+@media only screen and (max-width:1500px) {
+    .rodtextclass{
+        margin: 60px 200px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .rodtextclass{
+        margin: 60px 100px;
+    }
+}
+/*---------------------- NUMBERS END ---------------------------------*/
+/*---------------------- INFO TAB START ---------------------------------*/
+.activebuttons{
+    display: flex;
+    margin-left: 33%;
+}
+
+.group{
+    background-color: #2a578f;
+}
+
+.solo{
+    position: relative;
+    background-color: #2a578f;
+}
+
+.stret{
+    background-color: #2a578f;
+}
+
+.yoga{
+    position: relative;
+    background-color: coral;
+    box-shadow: 5px 5px 20px coral;
+}
+
+.activebuttons a{
+    font-size: 40px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: aliceblue;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.triClasses1{
+    content: "";
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    width: 30px;
+    height: 30px;
+    top: 100%;
+    left: 36%;
+    position: absolute;
+    background-color: coral;
+}
+
+.triClasses2{
+    content: "";
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    width: 30px;
+    height: 30px;
+    top: 100%;
+    left: 1500%;
+    position: absolute;
+    background-color: coral;
+}
+
+.information{
+    display: flex;
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-weight: 700;
+}
+
+.infotext{
+    margin-right: 10%;
+}
+
+.information img{
+    margin-top: 120px;
+    width: 500px;
+}
+
+.information h3{
+    margin-top: 80px;
+    font-size: 40px;
+}
+
+.information span{
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width:1015px) {
+    .information{
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 800px;
+        text-align: center;
+    }
+
+    .activebuttons{
+        margin-left: 5%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .downbuttons{
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .information{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 800px;
+        text-align: center;
+    }
+
+    .infotext{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .imaj{
+        text-align: center;
+        width: 100%;
+        height: auto;
+    }
+}
+/*---------------------- INFO TAB ENDS ---------------------------------*/
+/*---------------------- BMI TAB START ---------------------------------*/
+
+.BMIdiv{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 8%;
+    display: flex;
+}
+
+.BMItext h2{
+    color: #2a578f;
+    font-weight: 700;
+}
+
+.BMIimg{
+    position: relative;
+}
+
+.BMIinput{
+    display: flex;
+}
+
+.BMIinput p{
+    margin: 10px 10px;
+}
+
+#BMIbtn{
+    padding-right: 5px;
+    white-space: nowrap;
+}
+
+.triBMI{
+    content: "";
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    width: 50px;
+    height: 50px;
+    top: 99%;
+    left: 13%;
+    position: absolute;
+    background-color: #87b1d9;
+}
+
+@media only screen and (max-width:1400px) {
+    .BMIdiv{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media only screen and (max-width:1250px) {
+    .BMIdiv{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .BMIdiv{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .BMIdiv{
+        display: flex;
+        flex-direction: column;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .BMIinput{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .BMIimg{
+        margin-top: 5%;
+        margin-left: 15%;
+    }
+}
+
+/*---------------------- BMI TAB END ---------------------------------*/
+/*---------------------- TRAINER TAB START ---------------------------------*/
+
+.trainers{
+    text-align: center;
+    background-color: #dceeff;
+    padding-top: 100px;
+    margin-top: 100px;
+}
+
+.trainers h2{
+    color: #2a578f;
+    font-weight: 700;
+    font-size: 40px;
+
+}
+
+.rodtrainer{
+    background-color: coral;
+    font-size: 7px;
+    padding: 1px 60px;
+    border-radius: 10px;
+}
+
+.rodtexttrainer{
+    margin: 60px 500px;
+    font-size: 20px;
+}
+
+.trainerimg{
+    display: flex;
+    margin-left: 15%;
+}
+
+.tr{
+    padding-left: 5%;
+}
+
+#tr1{
+    position: relative;
+}
+
+.tr img{
+    border-radius: 15px;
+    border-color: coral;
+    border-style: solid;
+}
+
+.tr1vert{
+    content: "";
+    clip-path: polygon(0 30%, 100% 30%, 100% 70%, 0 70%);
+    width: 330px;
+    height: 50px;
+    top: 40%;
+    left: 15%;
+    position: absolute;
+    z-index: -1;
+    background-color: #2a578f;
+    transition: 0.2s all linear;
+}
+
+.tr1hor{
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 380px;
+    top: -3%;
+    left: 53%;
+    z-index: -1;
+    background-color: #2a578f;
+    transition: 0.2s all linear;
+}
+
+#tr1:hover .tr1vert{
+    height: 250px;
+    top: 25%
+}
+
+#tr1:hover .tr2vert{
+    height: 250px;
+    left: 5%;
+}
+
+@media only screen and (max-width:1600px) {
+    .trainerimg{
+        display: flex;
+        margin-left: 10%;
+    }
+    .rodtexttrainer{
+        margin: 60px 200px;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .trainerimg{
+        display: flex;
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .trainerimg{
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+    }
+    .rodtexttrainer{
+        margin: 60px 100px;
+    }
+
+}
+
+/*---------------------- TRAINER TAB END ---------------------------------*/
+/*---------------------- PURCHASE TAB END ---------------------------------*/
+
+.purchase{
+    text-align: center;
+    background-color: darkgrey;
+}
+
+.purchase h2{
+    color: #2a578f;
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 100px;
+}
+
+.rodpurchase{
+    background-color: coral;
+    font-size: 7px;
+    padding: 1px 60px;
+    border-radius: 10px;
+}
+
+.rodtextpurchase{
+    margin: 60px 500px;
+    font-size: 20px;
+}
+
+.items{
+    border-style: solid;
+    border-radius: 20px;
+}
+
+.items img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.purchasep{
+    display: flex;
+    padding-left: 100px;
+}
+
+.purchasep img{
+    width: 30px;
+    padding-right: 10px;
+}
+
+@media only screen and (max-width:1500px) {
+    .rodtextpurchase{
+        margin: 60px 200px;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .rodtextpurchase{
+        margin: 60px 100px;
+    }
+}
