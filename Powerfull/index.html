@@ -10,39 +10,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="body">
     <header>
-        <nav class="navbar navbar-expand-sm">
-            <div class="container-fluid m-2">
-              <a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+        <nav id="stick">
+            <div class="navi">
+                <div>
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div class="dropdown" style="float:right;">
+                    <button class="dropbtn">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Home</a>
+                        <a href="index.html#class">Classes</a>
+                        <a href="index.html#trainer">Trainer</a>
+                        <a href="index.html#review">Review</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                  </div>
+                <div class="headdiv">
+                    <ul class="headlist">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="index.html#class">Classes</a></li>
+                        <li><a href="index.html#trainer">Trainer</a></li>
+                        <li><a href="index.html#review">Review</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                <p class="join">JOIN US</p>
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03">
-                <ul class="navbar-nav me-auto mb-sm-0">
-                    <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Classes</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Trainer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Review</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#"><p class="join">JOIN US</p></a>
-                    </li>
-                </ul>
-              </div>
-          </nav>
-          <div class="midhead">
+            </div>
+        </nav>
+        <div class="midhead">
             <a class="powerfull"><strong>POWERFULL</strong></a>
             <div class="titletext">
                 <h1 class="hebir">Group Practice</h1>
@@ -53,7 +50,7 @@
                 <a class="sign"><span>Sign Up</span></a>
                 <a class="details"><span></span>Details</span></a>
             </div>
-          </div>
+        </div>
     </header>
     <section class="numbers">
         <div class="numbernodes">
@@ -65,9 +62,10 @@
             </ul>
         </div>
     </section>
+    <a name="class" id="class"></a>
     <section class="classes">
         <div>
-            <h2>OUR CLASSES</h2>
+            <h2>OUR CLASSES <div class="classshadow"></div></h2>
             <span class="rodclass"></span>
             <p class="rodtextclass">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nam voluptates perferendis unde et adipisci expedita quod atque tenetur maxime.</p>
         </div>
@@ -112,7 +110,7 @@
                     <p>cm</p>
                     <input type="text" id="wei" placeholder="Your Weight">
                     <p>kg</p>
-                    <button type="button" id="BMIbtn" disabled>Your BMI: </button>
+                    <button type="button" id="BMIbtn" disabled>BMI: </button>
                 </div>
             </div>
             <div class="BMIimg">
@@ -120,16 +118,19 @@
             </div>
         </div>
     </section>
+    <a name="trainer" id="trainer"></a>
     <section class="trainers">
+        <div class="trainerback">
         <div>
             <h2>OUR BEST TRAINERS</h2>
             <span class="rodtrainer"></span>
             <p class="rodtexttrainer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nam voluptates perferendis unde et adipisci expedita quod atque tenetur maxime.</p>
         </div>
         <div class="trainerimg">
-            <div class="tr" id="tr1"><img src="images/trainer1.jpg" alt=""><div class="tr1vert"></div><div class="tr1hor"></div><div class="tr1label"><h3>Jane Doe</h3><p>Cardio Trainer</p></div></div>
-            <div class="tr" id="tr2"><img src="images/trainer2.jpg" alt=""><div></div></div>
-            <div class="tr" id="tr3"><img src="images/trainer3.jpg" alt=""><div></div></div>
+            <div class="tr" id="tr1"><img class="trimg" src="images/trainer1.jpg" alt=""><div class="tr1vert"></div><div class="tr1hor"></div><div class="tr1label"><h3>Jane Doe</h3><p>Cardio Trainer</p></div></div>
+            <div class="tr" id="tr2"><img class="trimg" src="images/trainer2.jpg" alt=""><div class="tr2vert"></div><div class="tr2hor"></div><div class="tr2label"><h3>Derek Nathan</h3><p>Bench Pro</p></div></div>
+            <div class="tr" id="tr3"><img class="trimg" src="images/trainer3.jpg" alt=""><div class="tr3vert"></div><div class="tr3hor"></div><div class="tr3label"><h3>Jane Doe</h3><p>Cardio Trainer</p></div></div>
+        </div>
         </div>
     </section>
     <section class="purchase">
@@ -140,16 +141,111 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase1.jpg" alt=""><h3>Kettle / 5kg</h3><p class="purchasep"><span class="overline">89,99$</span> / 59,99$</p><p class="purchasep"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
-                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase2.jpg" alt=""><h3>Treadmill</h3><p class="purchasep"><span class="overline">899,99$</span> / 599,99$</p><p class="purchasep"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
-                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase3.jpg" alt=""><h3>Adjust Dumbbell</h3><p class="purchasep"><span class="overline">89,99$</span> / 59,99$</p><p class="purchasep"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
-                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase4.jpg" alt=""><h3>Kettle / 3kg</h3><p class="purchasep"><span class="overline">89,99$</span> / 59,99$</p><p class="purchasep"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
+                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase1.jpg" alt=""><h3>Kettle / 5kg</h3><p class="purchasep"><span class="overline">89,99$</span> / 59,99$</p> <p class="purchasecart"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
+                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase2.jpg" alt=""><h3>Treadmill</h3><p class="purchasep"><span class="overline">899,99$</span> / 599,99$</p> <p class="purchasecart"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
+                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase3.jpg" alt=""><h3>Adjust Dumbbell</h3><p class="purchasep"><span class="overline">89,99$</span> / 59,99$</p> <p class="purchasecart"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
+                <div class="col-sm-12 col-lg-6 col-xl-3"><div class="items"><img src="images/purchase4.jpg" alt=""><h3>Kettle / 3kg</h3><p class="purchasep"><span class="overline">89,99$</span> / 59,99$</p> <p class="purchasecart"><img src="images/sc.png" alt=""> Add to Cart</p></div></div>
             </div>
         </div>
     </section>
+    <a name="review" id="review"></a>
+    <section class="review">
+        <div>
+            <h2>REVIEW CLIENT</h2>
+            <span class="rodreview"></span>
+            <p class="rodtextreview">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nam voluptates perferendis unde et adipisci expedita quod atque tenetur maxime.</p>
+        </div>
+        <div class="client">
+            <div class="client1">
+                <div class="clientdata">
+                    <img src="images/client1.jpg" alt="">
+                    <div>
+                        <h4>Diet Expert</h4>
+                        <h5>CFO</h5>
+                    </div>
+                </div>
+                <div class="clientboard">   
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste libero ipsam ipsa natus, sint unde, praesentium placeat obcaecati quo temporibus nihil delectus ea, fugit inventore?<div class="client1trileft"></div><div class="client1triright"></div></p>
+                </div>
+            </div>     
+            <div class="client2">
+                <div class="clientdata">
+                    <img src="images/client2.jpg" alt="">
+                    <div>
+                        <h4>Cardio Trainer</h4>
+                        <h5>CEO</h5>
+                    </div>
+                </div>    
+                <div class="clientboard">    
+                    <p>Autem iusto obcaecati ad laboriosam in consectetur praesentium culpa quisquam sunt voluptate dolores illo, mollitia sapiente itaque, quas quidem magnam. Vel quas blanditiis reprehenderit corporis.<div class="client2trileft"></div><div class="client2triright"></div></p>
+                </div>
+            </div>
+        </div>    
+    </section>
+    <a name="contact" id="contact"></a>
+    <section class="contactus">
+        <div class="contacthead">
+            <h2>CONTACT US</h2>
+            <span class="rodcontact"></span>
+            <p class="rodtextcontact">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint nam voluptates perferendis unde et adipisci expedita quod atque tenetur maxime.</p>
+        </div>
+        <div class="appoinment">
+            <div class="contactdata">
+                <div class="contacttitle">
+                    <div class="contactnum">
+                        <h6>Mobile Number</h6>
+                        <p>+135 773 321 4442</p>
+                    </div>
+                    <div class="contactmail">
+                        <h6>E-mail Address</h6>
+                        <p>demo@demo.com</p>
+                    </div>
+                </div>
+                <h5>Make An Appoinment</h5>
+                <div class="appoinmentinput">
+                    <input type="text" name="" id="name" placeholder="Yourname">
+                    <input type="text" name="" id="email" placeholder="Your Email">
+                    <input type="text" name="" id="message" placeholder="Your Message">
+                </div>
+            </div> 
+            <div class="map" id="mapright">
+                <iframe width="600" height="450" style="bound:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=17&center=36.1739%2C-86.7646&key=AIzaSyDpzb8ixKvklMkXNy7EcJQi_H3z_YBnzR4"></iframe>
+            </div>   
+        </div>
+        <div class="map" id="mapdown">
+            <iframe width="600" height="450" style="bound:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=17&center=36.1739%2C-86.7646&key=AIzaSyDpzb8ixKvklMkXNy7EcJQi_H3z_YBnzR4"></iframe>
+        </div>
+    </section>
+    <section class="footsec">
+        <footer>
+            <img src="images/logo.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit eligendi quaerat autem, debitis provident beatae quam nisi quas rem. Expedita molestias commodi illo magni dolore vel eligendi dolorem, inventore cumque quidem! Nobis vel provident quisquam.</p>
+            <div class="foot">
+                <div class="feet">
+                    <h5>Information</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Classes</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="feet">
+                    <h5>Helpful Links</h5>
+                    <ul>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Supports</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="activebuttons.js"></script>
-    <script src="BMI.js"></script>
+    <script src="js/activebuttons.js"></script>
+    <script src="js/BMI.js"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>

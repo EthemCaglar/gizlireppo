@@ -1,19 +1,114 @@
 *{
     font-family: "Space Grotesk", sans-serif;
 }
+:root{
+    --myblue : #355592;
+}
+
+@media only screen and (max-width:600px) {
+    body p{
+        font-size: 30px;
+    }
+
+    body span{
+        font-size: 30px;
+    }
+}
 /*-------------------- header start ------------------------------*/
-header {
+#stick{
+    top: 0;
+    width: 100%;
+    z-index: 9;
+}
+
+.navi{
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.dropbtn {
+    background-color: var(--myblue);
+    color: white;
+    margin-top: 18px;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropbtn {background-color: #2a4576;}
+
+header{
     background-image: url(images/hero-man.jpg);
     background-position: center;
+}
+
+.headdiv{
+    display: flex;
+    margin: 0px 150px;
+    font-weight: 800;
+}
+
+.headlist{
+    display: flex;
+    list-style-type: none;
+}
+
+.headlist a{
+    text-decoration: none;
+    color: aliceblue;
+    margin-right: 30px;
+}
+
+.headlist li{
+    margin-top: 33px;
 }
 
 .join{
     font-weight: bold;
     background-color: coral;
-    padding: 5px;
+    color: aliceblue;
+    padding: 8px;
     border-radius: 10px;
     white-space: nowrap;
+    margin-top: 23px;
 }
+
+@media only screen and (max-width:600px) {
+    .header{
+        margin-top: 30px;
+    }
+
+    .dropdown{
+        display: inline-block;
+    }
+}
+
 /*-------------------- HEADER END ------------------------------*/
 /*--------------------  MIDHEAD START (hero) ----------------------------*/
 .hebir{
@@ -22,12 +117,6 @@ header {
 
 .heiki{
     white-space: nowrap;
-}
-
-nav{
-    position: relative;
-    margin-left: 20%;
-    margin-right: 20%;
 }
 
 .midhead{
@@ -40,7 +129,7 @@ nav{
     color: aliceblue;
     padding: 7px;
     border-radius: 10px;
-    background-color:darkslateblue;
+    background-color:var(--myblue);
     cursor: default;
     text-decoration: none;
 }
@@ -58,8 +147,9 @@ nav{
     cursor: pointer;
     border-radius: 10px;
 }
+
 .sign{
-    background-color:darkslateblue;
+    background-color:var(--myblue);
     font-weight: bold;
 }
 
@@ -84,18 +174,25 @@ nav{
     color: aliceblue;
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:600px) {
+    .midhead{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 15%;
+    }
     .powerfull{
         color: aliceblue;
         padding: 10px;
         border-radius: 10px;
         font-size: 30px;
     }
+
     .midheadbutton{
         display: flex;
         flex-direction: column;
         text-align: left;
     }
+
     .midheadbutton a{
       padding: 10px 30%;
     }
@@ -132,7 +229,7 @@ nav{
 }
 
 .nodes span{
-    color: #2a578f;
+    color: var(--myblue);
     font-weight: bold;
 }
 
@@ -156,10 +253,23 @@ nav{
 }
 
 .classes h2{
-    color: #2a578f;
+    color: var(--myblue);
     font-weight: 700;
     font-size: 40px;
     margin-top: 100px;
+    position: relative;
+}
+
+.classshadow{
+    content: "";
+    width: 90%;
+    height: 2000%;
+    top: -210%;
+    left: 20%;
+    position: absolute;
+    z-index: -1;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 50% 100%);
+    background-color: rgb(71,79,95,0.08)
 }
 
 .rodclass{
@@ -184,6 +294,10 @@ nav{
     .rodtextclass{
         margin: 60px 100px;
     }
+
+    .classshadow{
+        height: 3200%;
+    }
 }
 /*---------------------- NUMBERS END ---------------------------------*/
 /*---------------------- INFO TAB START ---------------------------------*/
@@ -193,16 +307,16 @@ nav{
 }
 
 .group{
-    background-color: #2a578f;
+    background-color: var(--myblue);
 }
 
 .solo{
     position: relative;
-    background-color: #2a578f;
+    background-color: var(--myblue);
 }
 
 .stret{
-    background-color: #2a578f;
+    background-color: var(--myblue);
 }
 
 .yoga{
@@ -274,8 +388,6 @@ nav{
     .information{
         margin-left: 5%;
         margin-right: 5%;
-        width: 800px;
-        text-align: center;
     }
 
     .activebuttons{
@@ -293,21 +405,12 @@ nav{
     .information{
         display: flex;
         flex-direction: column;
-        margin-left: 0px;
+        margin-left: 30px;
         margin-right: 0px;
-        width: 800px;
-        text-align: center;
     }
 
     .infotext{
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .imaj{
-        text-align: center;
-        width: 100%;
-        height: auto;
+        margin-right: 0;
     }
 }
 /*---------------------- INFO TAB ENDS ---------------------------------*/
@@ -321,7 +424,7 @@ nav{
 }
 
 .BMItext h2{
-    color: #2a578f;
+    color: var(--myblue);
     font-weight: 700;
 }
 
@@ -334,7 +437,7 @@ nav{
 }
 
 .BMIinput p{
-    margin: 10px 10px;
+    margin: 5px 5px;
 }
 
 #BMIbtn{
@@ -353,43 +456,39 @@ nav{
     background-color: #87b1d9;
 }
 
-@media only screen and (max-width:1400px) {
-    .BMIdiv{
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-}
-
-@media only screen and (max-width:1250px) {
-    .BMIdiv{
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-}
-
-@media only screen and (max-width:1100px) {
-    .BMIdiv{
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-}
-
-@media only screen and (max-width:1000px) {
+@media only screen and (max-width:600px) {
     .BMIdiv{
         display: flex;
         flex-direction: column;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .BMItext h2{
+        text-align: center;
+        font-size: 70px;
+    }
+
+    .infotext h3{
+        font-size: 60px;
+        font-weight: 800;
+    }
+
+    .BMItext p{
+        font-size: 25px;
+    }
+
+    .BMIinput{
         margin-left: 5px;
         margin-right: 5px;
     }
 
-    .BMIinput{
-        margin-left: 5%;
-        margin-right: 5%;
+    .BMIinput p{
+        font-size: 15px;
     }
 
     .BMIimg{
         margin-top: 5%;
-        margin-left: 15%;
     }
 }
 
@@ -398,16 +497,14 @@ nav{
 
 .trainers{
     text-align: center;
-    background-color: #dceeff;
     padding-top: 100px;
     margin-top: 100px;
 }
 
 .trainers h2{
-    color: #2a578f;
+    color: var(--myblue);
     font-weight: 700;
     font-size: 40px;
-
 }
 
 .rodtrainer{
@@ -429,28 +526,28 @@ nav{
 
 .tr{
     padding-left: 5%;
+    margin-bottom: 40px;
+}
+
+.trimg{
+    border-radius: 15px;
+    border-color: coral;
+    border-style: solid;
 }
 
 #tr1{
     position: relative;
 }
 
-.tr img{
-    border-radius: 15px;
-    border-color: coral;
-    border-style: solid;
-}
-
 .tr1vert{
     content: "";
-    clip-path: polygon(0 30%, 100% 30%, 100% 70%, 0 70%);
     width: 330px;
     height: 50px;
     top: 40%;
-    left: 15%;
+    left: 18%;
     position: absolute;
     z-index: -1;
-    background-color: #2a578f;
+    background-color: var(--myblue);
     transition: 0.2s all linear;
 }
 
@@ -462,59 +559,212 @@ nav{
     top: -3%;
     left: 53%;
     z-index: -1;
-    background-color: #2a578f;
+    background-color: var(--myblue);
     transition: 0.2s all linear;
 }
 
+.tr1label{
+    content: "";
+    width: 200px;
+    height: 80px;
+    top: 60%;
+    left: 35%;
+    position: absolute;
+    background-color: var(--myblue);
+    transition: 0.2s all linear;
+    opacity: 0;
+}
+
 #tr1:hover .tr1vert{
-    height: 250px;
-    top: 25%
+    height: 100px;
+    top: 30%;
 }
 
-#tr1:hover .tr2vert{
-    height: 250px;
-    left: 5%;
+#tr1:hover .tr1hor{
+    width: 100px;
+    left: 48%;
 }
 
-@media only screen and (max-width:1600px) {
-    .trainerimg{
-        display: flex;
-        margin-left: 10%;
-    }
-    .rodtexttrainer{
-        margin: 60px 200px;
-    }
+#tr1:hover .tr1label{
+    opacity: 1;
 }
 
-@media only screen and (max-width:1000px) {
-    .trainerimg{
-        display: flex;
-        margin-left: 5%;
-    }
+#tr2{
+    position: relative;
+}
+
+.tr2vert{
+    content: "";
+    width: 330px;
+    height: 50px;
+    top: 40%;
+    left: 18%;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--myblue);
+    transition: 0.2s all linear;
+}
+
+.tr2hor{
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 380px;
+    top: -3%;
+    left: 53%;
+    z-index: -1;
+    background-color: var(--myblue);
+    transition: 0.2s all linear;
+}
+
+.tr2label{
+    content: "";
+    width: 200px;
+    height: 80px;
+    top: 60%;
+    left: 35%;
+    position: absolute;
+    background-color: var(--myblue);
+    transition: 0.2s all linear;
+    opacity: 0;
+}
+
+#tr2:hover .tr2vert{
+    height: 100px;
+    top: 30%;
+}
+
+#tr2:hover .tr2hor{
+    width: 100px;
+    left: 48%;
+}
+
+#tr2:hover .tr2label{
+    opacity: 1;
+}
+
+#tr3{
+    position: relative;
+}
+
+.tr3vert{
+    content: "";
+    width: 330px;
+    height: 50px;
+    top: 40%;
+    left: 18%;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--myblue);
+    transition: 0.2s all linear;
+}
+
+.tr3hor{
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 380px;
+    top: -3%;
+    left: 53%;
+    z-index: -1;
+    background-color: var(--myblue);
+    transition: 0.2s all linear;
+}
+
+.tr3label{
+    content: "";
+    width: 200px;
+    height: 80px;
+    top: 60%;
+    left: 35%;
+    position: absolute;
+    background-color: var(--myblue);
+    transition: 0.2s all linear;
+    opacity: 0;
+}
+
+#tr3:hover .tr3vert{
+    height: 100px;
+    top: 30%;
+}
+
+#tr3:hover .tr3hor{
+    width: 100px;
+    left: 48%;
+}
+
+#tr3:hover .tr3label{
+    opacity: 1;
 }
 
 @media only screen and (max-width:900px) {
     .trainerimg{
         display: flex;
         flex-direction: column;
-        margin-left: 10px;
+        margin: 10px 20px;
     }
     .rodtexttrainer{
         margin: 60px 100px;
     }
 
+    .tr1label p{
+        font-size: 20px;
+    }
+
+    .tr1vert{
+        left: 22%;
+    }
+
+    .tr1hor{
+        left: 48%;
+    }
+
+    #tr1:hover .tr1hor{
+        left: 45%;
+    }
+
+    .tr2label p{
+        font-size: 20px;
+    }
+
+    .tr2vert{
+        left: 22%;
+    }
+
+    .tr2hor{
+        left: 48%;
+    }
+
+    #tr2:hover .tr2hor{
+        left: 45%;
+    }
+
+    .tr3label p{
+        font-size: 20px;
+    }
+
+    .tr3vert{
+        left: 22%;
+    }
+
+    .tr3hor{
+        left: 48%;
+    }
+
+    #tr3:hover .tr3hor{
+        left: 45%;
+    }
 }
 
 /*---------------------- TRAINER TAB END ---------------------------------*/
-/*---------------------- PURCHASE TAB END ---------------------------------*/
+/*---------------------- PURCHASE TAB START ---------------------------------*/
 
 .purchase{
     text-align: center;
-    background-color: darkgrey;
 }
 
 .purchase h2{
-    color: #2a578f;
+    color: var(--myblue);
     font-weight: 700;
     font-size: 40px;
     margin-top: 100px;
@@ -533,13 +783,17 @@ nav{
 }
 
 .items{
-    border-style: solid;
+    box-shadow: 10px 0px 30px #4b4b4b;
     border-radius: 20px;
+}
+
+.purchasep span{
+    text-decoration-line: line-through;
 }
 
 .items img{
     width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .purchasep{
@@ -547,19 +801,275 @@ nav{
     padding-left: 100px;
 }
 
-.purchasep img{
+.purchasecart img{
     width: 30px;
     padding-right: 10px;
 }
 
-@media only screen and (max-width:1500px) {
-    .rodtextpurchase{
-        margin: 60px 200px;
-    }
-}
-
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:700px) {
     .rodtextpurchase{
         margin: 60px 100px;
     }
+
+    .items{
+        margin: 10px 50px;
+    }
+
+    .purchasecart img{
+        width: 50px;
+        padding-left: 10px;
+    }
 }
+/*---------------------- PURCHASE TAB END ---------------------------------*/
+/*---------------------- REVIEW TAB STARTS ---------------------------------*/
+
+.review{
+    margin: 0 20%;
+    text-align: center;
+}
+
+.review h2{
+    color: var(--myblue);
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.rodreview{
+    background-color: coral;
+    font-size: 7px;
+    padding: 1px 60px;
+    border-radius: 10px;
+}
+
+.rodtextreview{
+    margin: 60px 100px;
+    font-size: 20px;
+}
+
+.client{
+    display: flex;
+    text-align: left;
+}
+
+.clientdata{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.clientdata img{
+    border-radius: 50px;
+    margin-right: 30px;
+}
+
+.client1{
+    margin-right: 100px;
+}
+
+.clientboard{
+    background-color: var(--myblue);
+    padding: 10px 10px;
+    color: aliceblue;
+    position: relative;
+}
+
+.client1trileft{
+    content: "";
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    width: 30px;
+    height: 30px;
+    top: 100%;
+    left: 0%;
+    position: absolute;
+    background-color: #7b97bc;
+}
+
+.client1triright{
+    content: "";
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+    width: 30px;
+    height: 30px;
+    top: 100%;
+    left: 94%;
+    position: absolute;
+    background-color: #7b97bc;
+}
+
+.client2trileft{
+    content: "";
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    width: 30px;
+    height: 30px;
+    top: 100%;
+    left: 0%;
+    position: absolute;
+    background-color: #7b97bc;
+}
+
+.client2triright{
+    content: "";
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+    width: 30px;
+    height: 30px;
+    top: 100%;
+    left: 94%;
+    position: absolute;
+    background-color: #7b97bc;
+}
+
+@media only screen and (max-width:700px) {
+    .review{
+        margin: 0 5px;
+    }
+    .rodtextreview{
+        margin: 60px 100px;
+    }
+    .client{
+        flex-direction: column;
+    }
+    .client1{
+        margin: 0 10px;
+    }
+    .client2{
+        margin: 60px 10px;
+    }
+}
+
+/*---------------------- REVIEW TAB END ---------------------------------*/
+/*---------------------- CONTACT TAB START ---------------------------------*/
+
+.contactus{
+    margin: 5% 20%;
+    font-weight: 600;
+}
+
+.contacthead{
+    text-align: center;
+}
+
+.contactus h6{
+    font-size: 20px;
+}
+
+.contactus h2{
+    color: var(--myblue);
+    font-weight: 700;
+    font-size: 40px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.rodcontact{
+    background-color: coral;
+    font-size: 7px;
+    padding: 1px 60px;
+    border-radius: 10px;
+}
+
+.rodtextcontact{
+    margin: 60px 100px;
+    font-size: 20px;
+}
+
+.appoinment{
+    display: flex;
+    margin: 0 30px;
+}
+
+.appoinmentinput{
+    display: flex;
+    flex-direction: column;
+}
+
+.contacttitle{
+    display: flex;
+    white-space: nowrap;
+}
+
+.contactmail{
+    margin: 0 15px;
+    padding-right: 15px;
+}
+
+.contactdata{
+    margin: 0 5%;
+}
+
+.appoinmentinput input{
+    background-color: #f0f8ff;
+    border: none;
+    padding: 10px 200px 10px 10px;
+    margin: 10px 0;
+}
+
+#mapdown{
+    display: none;
+}
+
+#message{
+    padding-bottom: 100px;
+}
+
+@media only screen and (max-width:800px) {
+    .contactus{
+        margin: 0 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacttitle p{
+        font-size: 20px;
+    }
+
+    .rodtextcontact{
+        margin: 60px 100px;
+    }
+
+    #mapright{
+        display: none;
+    }
+
+    #mapdown{
+        display: block;
+    }
+}
+
+/*---------------------- CONTACT TAB END ---------------------------------*/
+/*---------------------- FOOTER TAB START ---------------------------------*/
+.footsec{
+    background-color: var(--myblue);
+}
+
+footer{
+    margin: 0 20%;
+    color:aliceblue;
+}
+
+.foot{
+    display: flex;
+    margin: 0 30%;
+}
+
+.feet{
+    margin-right: 20%;
+}
+
+.feet ul{
+    list-style: none;
+    margin-top: 15px;
+}
+
+.feet a{
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+
+@media only screen and (max-width:600px) {
+    footer{
+        margin: 0 5px;
+        font-size: 20px;
+    }
+}
+/*---------------------- FOOTER TAB END ---------------------------------*/
