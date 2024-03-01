@@ -1,15 +1,22 @@
 import './App.css'
 import { useState } from 'react'
 import Question from './components/Question'
-import { questions } from './questions'
+import { questiondata } from './data'
 
 
 function App() {
-  const [questions, setCount] = useState(0)
-
   return (
     <>
-      
+      {questiondata.map((questions) => {
+      return(
+        <Question
+        key={questions.answer}
+        question={questions.question}
+        options={questions.options}
+        answer={questions.answer}
+        media={questions.media}/>
+      );
+    })}
     </>
   )
 }

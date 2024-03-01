@@ -1,2 +1,2 @@
-import Person from "./Question";
+import Question from "./Question";
 export default Question;
